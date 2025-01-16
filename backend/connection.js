@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const connectMongoDB = (http, port) => {
-    // const mongoString = "mongodb+srv://new-user-00:ygApudt2hCUJBfkY@cluster0.astvh.mongodb.net/"
-    const mongoString = "mongodb+srv://user-1:lrFDeZ7jAJoZo9hA@cluster0.ngbw31v.mongodb.net/car-selling?retryWrites=true&w=majority";
+
+    const mongoString = "mongodb://localhost:27017/CarSellingApp"
     mongoose.connect(mongoString)
         .then(() => {
             console.log("Connected to the database successfully!");
