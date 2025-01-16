@@ -1,0 +1,5 @@
+The Car-Selling Service Application is an advanced platform designed to empower users to sell their cars quickly and efficiently. By providing a seamless experience, users can securely log into their accounts and post detailed advertisements for their cars. They can include essential information such as the car model, price, specifications, and additional features.
+
+To make their listings more appealing, users are also given the ability to upload between 1 to 10 high-quality images of the vehicle, showcasing the car's condition and key attributes. Furthermore, the application facilitates direct communication between sellers and potential buyers by allowing sellers to share their contact numbers.
+
+While the application currently focuses on enabling sellers to create personalized ads, it offers a professional and user-friendly platform that simplifies the car-selling process. Whether you're an individual selling a single car or a dealership looking to manage multiple listings, the Car-Selling Service Application ensures a smooth and efficient experience from start to finish.
