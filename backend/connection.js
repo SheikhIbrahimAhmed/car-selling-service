@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectMongoDB = (http, port) => {
 
-    const mongoString = "mongodb://localhost:27017/CarSellingApp"
+    const mongoString = "mongodb+srv://user-1:lrFDeZ7jAJoZo9hA@cluster0.ngbw31v.mongodb.net/property-management?retryWrites=true&w=majority"
     mongoose.connect(mongoString)
         .then(() => {
             console.log("Connected to the database successfully!");

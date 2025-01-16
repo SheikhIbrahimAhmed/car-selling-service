@@ -14,7 +14,7 @@ const PublicLayoutRoutes = () => {
                 return;
             }
             try {
-                const response = await axios.get("https://car-selling-api.vercel.app/api/auth/validate-token", {
+                const response = await axios.get("/api/auth/validate-token", {
                     headers: {
                         "Authorization": `Bearer ${token}`,
                         "Content-Type": "application/json",

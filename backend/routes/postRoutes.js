@@ -4,7 +4,6 @@ const loginMiddleware = require('../middleware/loginMiddleware');
 const { createPost } = require('../controllers/postController');
 const { upload } = require('../middleware/multer');
 const cloudinary = require('../cloudinary');
-const multer = require('multer');
 
 
 router.post('/create-post', loginMiddleware, createPost);

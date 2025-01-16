@@ -10,6 +10,7 @@ const { connectMongoDB } = require('./connection');
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req, res) => res.send("Welcome to car selling API"));
 
 app.use(express.json());
 
