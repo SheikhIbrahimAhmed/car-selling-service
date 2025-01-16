@@ -19,7 +19,7 @@ const PrivateLayoutRoutes = () => {
                 return;
             }
             try {
-                const response = await axios.get("http://localhost:5000/api/auth/validate-token", {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/validate-token`, {
                     headers: {
                         "Authorization": `Bearer ${token}`,
                         "Content-Type": "application/json",

@@ -32,6 +32,37 @@ const PostPage = () => {
             [name]: value,
         }));
     };
+    // const handleImageUpload = async (e) => {
+    //     const files = Array.from(e.target.files);
+    //     const formData = new FormData();
+    //     files.forEach((file) => {
+    //         formData.append("images", file);
+    //     });
+
+    //     try {
+    //         const response = await axios.post("http://localhost:5000/api/post/upload-images", formData, {
+    //             headers: {
+    //                 "Content-Type": "multipart/form-data",
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //         });
+
+    //         if (response.status === 200) {
+    //             const uploadedImageUrls = response.data.imageUrls;
+    //             setpostData((prev) => ({
+    //                 ...prev,
+    //                 images: [...prev.images, ...uploadedImageUrls],
+    //             }));
+    //             toast.success("Image uploaded successfully!");
+    //         } else {
+    //             toast.error("Failed to upload images.");
+    //         }
+    //     } catch (error) {
+    //         console.error("Error uploading images:", error);
+    //         toast.error("An error occurred while uploading images.");
+    //     }
+    // };
+
     const handleImageUpload = async (e) => {
         const files = Array.from(e.target.files);
         const formData = new FormData();
@@ -63,8 +94,6 @@ const PostPage = () => {
         }
     };
 
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!user || !user?._id) {
@@ -79,6 +108,7 @@ const PostPage = () => {
             toast.error("Please fill all fields!");
             return;
         }
+        console.log("images", postData.images)
         if (!(postData.images.length >= 1 && postData.images.length <= 10)) {
             toast.error("You must upload images between 1 and 10 images!");
             return;
@@ -124,6 +154,17 @@ const PostPage = () => {
     };
 
 
+    // const handleImageChange = (event) => {
+
+    //     //previously when I was using uploads folder on backend to upload images
+    //     const files = Array.from(event.target.files);
+    //     const imageUrls = files.map((file) => URL.createObjectURL(file));
+    //     setSelectedImages((prev) => [...prev, ...imageUrls]);
+
+
+    //     // Now when I am using Cloudinary.
+    //     setSelectedImages(Array.from(event.target.files));
+    // };
     const handleImageChange = (event) => {
         const files = Array.from(event.target.files);
         const imageUrls = files.map((file) => URL.createObjectURL(file));

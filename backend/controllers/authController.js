@@ -1,15 +1,11 @@
 const { findSingleUserServ } = require("../services/authService");
-
-const SECRET_KEY = "12qw"
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
-
 
 const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const user = await findSingleUserServ(email, password); if (!user) {
+        const user = await findSingleUserServ(email, password);
+        if (!user) {
             return res.status(404).json({ error: "User not found or invalid password" });
         }
         const token = jwt.sign(
@@ -17,7 +13,7 @@ const loginUser = async (req, res) => {
                 name: user.name,
                 email: user.email,
             },
-            SECRET_KEY,
+            process.env.SECRET_KEY,
             { expiresIn: "7d" }
         );
         user.password = "";

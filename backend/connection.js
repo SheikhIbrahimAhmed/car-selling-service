@@ -1,16 +1,18 @@
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
-const connectMongoDB = () => {
-    mongoose.connect("mongodb://localhost:27017/CarSellingApp")
+const connectMongoDB = (http, port) => {
+    // const mongoString = "mongodb+srv://new-user-00:ygApudt2hCUJBfkY@cluster0.astvh.mongodb.net/"
+    const mongoString = "mongodb+srv://user-1:lrFDeZ7jAJoZo9hA@cluster0.ngbw31v.mongodb.net/car-selling?retryWrites=true&w=majority";
+    mongoose.connect(mongoString)
         .then(() => {
             console.log("Connected to the database successfully!");
+            http.listen(port, function () {
+                console.log("Backend is running on port 5000");
+            });
         })
         .catch((error) => {
             console.error("Error connecting to the database:", error);
         });
-    mongoose.connection.on('connected', () => {
-        console.log('Mongoose is connected to the database');
-    });
 
 }
 
