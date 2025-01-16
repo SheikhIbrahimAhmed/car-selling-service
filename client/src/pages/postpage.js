@@ -42,7 +42,7 @@ const PostPage = () => {
         });
 
         try {
-            const response = await axios.post("http://localhost:5000/api/post/upload-images", formData, {
+            const response = await axios.post("https://car-selling-api.vercel.app/api/post/upload-images", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${token}`,
@@ -95,7 +95,7 @@ const PostPage = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/post/create-post",
+                "https://car-selling-api.vercel.app/api/post/create-post",
                 postData,
                 {
                     headers: {
